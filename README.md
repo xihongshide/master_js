@@ -1,2 +1,8 @@
-# master_js
-Fundamental Js concept 
+## Fundamental Js concepts##
+* ####Async/Promise
+	+ Async Callback
+    + Promise
+    + Promise.all()
+	
+* ####Scope/Closure/Module
+ 
