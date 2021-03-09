@@ -1,11 +1,12 @@
 ## Fundamental Js concepts##
-* ####Async/Promise
+* #### Async/Promise
 	+ Async Callback
     + Promise
     + Promise.all()
 	
-* ####Scope/Closure/Module
+* #### Scope/Closure/Module
     + Scope/closure
     + Module
+* #### Class/Polymorphism
 
  
