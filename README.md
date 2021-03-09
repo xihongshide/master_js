@@ -5,4 +5,7 @@
     + Promise.all()
 	
 * ####Scope/Closure/Module
+    + Scope/closure
+    + Module
+
  
