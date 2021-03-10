@@ -64,8 +64,6 @@ Promise.all([getApi("lli@lli.com", "123"), getId("lli")])
     .then(res => console.log(res.Title))
     .catch(err => console.error(err));
 
-
-
 console.log("finish");
 
 
