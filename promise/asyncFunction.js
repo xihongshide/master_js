@@ -56,15 +56,20 @@ function getMovieDetails(apiKey, id) {
     })
 }
 
-// Promise.all() get all the promise at the same time, and will execute until all the promises return.
-Promise.all([getApi("lli@lli.com", "123"), getId("lli")])
-    .then(res => {
-        return getMovieDetails(res[0].key, res[1].id);
-    })
-    .then(res => console.log(res.Title))
-    .catch(err => console.error(err));
+//async works just like promise but looks nice like a sync
+async function getMovieTitle() {
+    try {
+        const api = await getApi("lli@lli.com", "123");
+        const user = await getId("lli");
+        const movieDetails = await getMovieDetails(api.key, user.id)
+        console.log(movieDetails.Title);
+    }
+    catch (err) {
+        console.error(err)
+    }
+}
 
-
+getMovieTitle();
 
 console.log("finish");
 
