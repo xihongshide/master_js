@@ -5,7 +5,7 @@ function createBook(title, author, year) {
         author,
         year,
         getSummary: () => this.title + "is written by " + this.author + "in" + this.year,
-    }
+    };
 }
 
 
@@ -28,17 +28,17 @@ function Book(title, author, year) {
 // Store the method in the prototype
 Book.prototype.getSummary = function() {
     return this.title + " is written by " + this.author + " in " + this.year;
-}
+};
 
 Book.prototype.getAge = function() {
     const year = new Date().getFullYear() - this.year;
     return this.title + " is " + year + " years old.";
-}
+};
 
 Book.prototype.reviseYear = function(newYear) {
     this.year = newYear;
     this.revise = true;
-}
+};
 
 // Magazine constructor
 function Magazine(title, author, year, month) {

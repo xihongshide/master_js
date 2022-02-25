@@ -9,10 +9,9 @@ function getApi(email, password, callback) {
     setTimeout(()=> {
         if (email === "lli" && password === "123") {
             callback({key: config.apiKey});
-            console.log("got apikey!")
+            console.log("got apikey!");
         }else {
             throw new Error("invalid email or password!");
-            return;
         }
     }, 3000);
 }
@@ -20,11 +19,10 @@ function getApi(email, password, callback) {
 function getId(api, callback) {
     setTimeout(()=> {
         if(api === config.apiKey) {
-            console.log("got id!")
+            console.log("got id!");
             callback({id: "tt0190332",});
         }else {
             throw new Error("invalid email or password!");
-            return;
         }
     }, 3000);
 }
@@ -38,11 +36,9 @@ function getMovieDetails(id, apiKey) {
 
 const movie = getApi("lli", "123", (api) =>{
     getId(api.key, (movie) => {
-        console.log("got movie title!")
-        console.log(getMovieDetails(movie.id, api.key).Title)
-    })
+        console.log("got movie title!");
+        console.log(getMovieDetails(movie.id, api.key).Title);
+    });
 });
 
 console.log("finish");
-
-
