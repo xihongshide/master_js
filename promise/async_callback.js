@@ -1,5 +1,5 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var config = require('./config.js');
+import {XMLHttpRequest as XHR} from 'xmlhttprequest';
+import config from "../config.js";
 
 console.log("start");
 
@@ -8,7 +8,7 @@ function getApi(email, password, callback) {
 
     setTimeout(()=> {
         if (email === "lli" && password === "123") {
-            callback({key: config.apiKey});
+            callback({key: config.OMDB_API_KEY});
             console.log("got apikey!");
         }else {
             throw new Error("invalid email or password!");
@@ -18,7 +18,7 @@ function getApi(email, password, callback) {
 
 function getId(api, callback) {
     setTimeout(()=> {
-        if(api === config.apiKey) {
+        if(api === config.OMDB_API_KEY) {
             console.log("got id!");
             callback({id: "tt0190332",});
         }else {
@@ -28,7 +28,7 @@ function getId(api, callback) {
 }
 
 function getMovieDetails(id, apiKey) {
-    const xmlHttp = new XMLHttpRequest();
+    const xmlHttp = new XHR();
     xmlHttp.open("GET", "http://www.omdbapi.com/?i=" + id + "&apikey=" + apiKey, false); // true for asynchronous
     xmlHttp.send(null);
     return JSON.parse(xmlHttp.responseText);
